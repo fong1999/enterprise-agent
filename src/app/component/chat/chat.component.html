@@ -1,0 +1,18 @@
+<div class="chat-container">
+    <header class="chat-header">
+      <h2>AI Assistant</h2>
+    </header>
+  
+    <div class="chat-box">
+      <div *ngFor="let msg of messages" class="message" [ngClass]="msg.sender">
+        <span>{{ msg.text }}</span>
+      </div>
+    </div>
+  
+    <div class="input-area">
+      <input [(ngModel)]="inputText" placeholder="Ask something..." (keyup.enter)="sendMessage()" />
+      <button (click)="sendMessage()">Send</button>
+      <button (click)="startListening()">🎤</button>
+    </div>
+  </div>
+  

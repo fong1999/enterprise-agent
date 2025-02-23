@@ -1,0 +1,25 @@
+<aside class="right-panel">
+    <div class="widget calendar">
+      <h3>📅 Calendar</h3>
+      <p>No upcoming events</p>
+    </div>
+    
+    <div class="widget people">
+      <h3>👥 People You Work With</h3>
+      <ul>
+        <li *ngFor="let person of people">
+          <img [src]="person.avatar" alt="{{ person.name }}" class="avatar">
+          <div>
+            <span class="name">{{ person.name }}</span>
+            <span class="role">{{ person.role }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="widget weather">
+      <h3>☀️ Weather</h3>
+      <p>27°C Sunny</p>
+    </div>
+  </aside>
+  

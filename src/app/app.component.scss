@@ -1,0 +1,104 @@
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #f3f4f6;
+  --sidebar-bg: #1f2937;
+}
+
+body {
+  background-color: var(--secondary-color);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--primary-color);
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.user-actions .settings-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+}
+
+.dashboard {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content Feed */
+.content-feed {
+  flex: 1;
+  padding: 20px;
+}
+
+.news-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Panel Widgets */
+.right-panel {
+  width: 280px;
+  background: white;
+  padding: 15px;
+  border-left: 1px solid lightgray;
+}
+
+.widget {
+  background: var(--secondary-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 10px;
+  background: var(--primary-color);
+  color: white;
+}

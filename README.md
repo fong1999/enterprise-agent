@@ -1,4 +1,4 @@
-# EnterpriseChatbot
+# AgentPlayground
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
@@ -57,3 +57,42 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Set PATH
+
+```
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+```
+## Clean
+
+```
+rm -rf node_modules package-lock.json .angular/cache
+rm -rf node_modules package-lock.json  # ✅ Remove old dependencies
+npm install                            # ✅ Reinstall fresh dependencies
+
+ng serve --open
+```
+
+## Troubleshoot
+
+```
+npm list @angular/compiler
+```
+
+```
+npm install @angular/compiler --save-dev
+```
+## Fix	How to Check?
+
+✅ Check for auto-generated files	Look in src/app/generated/ or src/app/components/widgets/org-chart/
+✅ Clear Angular cache & reinstall	Run rm -rf node_modules package-lock.json .angular/cache && npm install && ng serve --open
+✅ Check for duplicate imports	Ensure app.module.ts only imports OrgChartComponent once
+
+## How to use HTTPS
+
+```
+openssl req -x509 -newkey rsa:2048 -keyout localhost.key -out localhost.crt -days 365 -nodes -subj "/CN=localhost"
+
+ng serve --ssl --ssl-cert ./localhost.crt --ssl-key ./localhost.key --open
+
+```
