@@ -38,11 +38,6 @@ body {
   color: white;
 }
 
-// .dashboard {
-//   display: flex;
-//   height: calc(100vh - 60px);
-// }
-
 /* Sidebar Styling */
 .sidebar {
   width: 220px;
@@ -133,7 +128,22 @@ app-sidebar {
   align-items: center; /* Centering the chatbot placeholder */
 }
 
+app-sidebar {
+  width: 220px;
+  border-radius: 15px; /* Rounded corners */
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering the chatbot placeholder */
+  border-radius: 15px; /* Rounded corners */
+}
+
 app-right-panel {
   width: 280px;
+  border-radius: 15px; /* Rounded corners */
 }
 
