@@ -11,6 +11,6 @@ import { FooterComponent } from './components/footer/footer.component';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [RouterOutlet, HeaderComponent, SidebarComponent, ChatbotContainerComponent, RightPanelComponent, FooterComponent]
+  imports: [RouterOutlet, HeaderComponent, ChatbotContainerComponent, SidebarComponent, ChatbotContainerComponent, RightPanelComponent, FooterComponent]
 })
 export class AppComponent { }
