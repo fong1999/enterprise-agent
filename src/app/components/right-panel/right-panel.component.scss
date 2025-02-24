@@ -12,31 +12,31 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
   
-    .people ul {
-      list-style: none;
-      padding: 0;
+    // .people ul {
+    //   list-style: none;
+    //   padding: 0;
   
-      li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
+    //   li {
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 10px;
+    //     margin-bottom: 10px;
+    //   }
   
-      .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
+    //   .avatar {
+    //     width: 40px;
+    //     height: 40px;
+    //     border-radius: 50%;
+    //   }
   
-      .name {
-        font-weight: bold;
-      }
+    //   .name {
+    //     font-weight: bold;
+    //   }
   
-      .role {
-        font-size: 0.9em;
-        color: gray;
-      }
-    }
+    //   .role {
+    //     font-size: 0.9em;
+    //     color: gray;
+    //   }
+    // }
   }
   

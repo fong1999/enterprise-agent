@@ -7,5 +7,18 @@
       <li>Mar 1 - Sprint Planning</li>
     </ul>
   </div>
-  </aside>
+
+  <div class="widget people">
+    <h3>👥 People You Work With</h3>
+    <ul>
+      <li *ngFor="let person of people">
+        <img [src]="person.avatar" alt="{{ person.name }}" class="avatar">
+        <div>
+          <span class="name">{{ person.name }}</span>
+          <span class="role">{{ person.role }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</aside>
   
