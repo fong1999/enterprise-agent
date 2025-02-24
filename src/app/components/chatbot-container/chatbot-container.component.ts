@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chatbot-container',
-  imports: [],
   templateUrl: './chatbot-container.component.html',
-  styleUrl: './chatbot-container.component.scss'
+  styleUrl: './chatbot-container.component.scss',
+  imports: [CommonModule]
 })
 export class ChatbotContainerComponent {
-
+  @Input() selectedAgent: string = '';
 }

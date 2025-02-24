@@ -13,4 +13,10 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrls: ['./app.component.scss'],
   imports: [RouterOutlet, HeaderComponent, ChatbotContainerComponent, LeftPanelComponent, RightPanelComponent, FooterComponent]
 })
-export class AppComponent { }
+export class AppComponent { 
+  selectedAgent: string = '';
+
+  selectAgent(agent: string) {
+    this.selectedAgent = agent;
+  }
+}
