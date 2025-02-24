@@ -1,14 +1,15 @@
-.app-footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-    background: #2563eb;
-    color: white;
+.app-footer {
+    width: 100%;
+    background: #0047bbff;
+    padding: 15px;
     text-align: center;
-}
-
-.footer{
-    color: white;
-    text-align: center;
-}
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #f9f4f4;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  }
+  
+  .footer {
+    font-weight: bold;
+  }
+  
