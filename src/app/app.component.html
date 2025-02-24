@@ -1,12 +1,13 @@
 <app-header></app-header>
-
-<main class="dashboard">
-  <app-sidebar></app-sidebar>
-  <section class="main-content">
-    <!-- <router-outlet></router-outlet> -->
-    <app-chatbot-container></app-chatbot-container>
-    <router-outlet></router-outlet>
-  </section>
-  <app-right-panel></app-right-panel>s
+<main class="dashboard-container">
+  <div class="dashboard">
+    <app-left-panel></app-left-panel>
+    <section class="main-content">
+      <app-chatbot-container></app-chatbot-container>
+      <!-- <app-content-feed></app-content-feed> -->
+      <router-outlet></router-outlet>
+    </section>
+    <app-right-panel></app-right-panel>
+  </div>
 </main>
-<app-footer></app-footer>
+<app-footer></app-footer> 
