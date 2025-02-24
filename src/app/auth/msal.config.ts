@@ -1,14 +1,15 @@
 import { PublicClientApplication, LogLevel } from '@azure/msal-browser';
+import { environment } from '../../environments/environment';
 
 export const MSALConfig = {
   auth: {
-    clientId: 'your-client-id', // 🔹 Replace with your Azure AD App Registration Client ID
-    authority: 'https://login.microsoftonline.com/your-tenant-id', // 🔹 Replace with your Tenant ID
-    redirectUri: 'http://localhost:4200', // 🔹 Redirect URL after authentication
+    clientId: environment.msalConfig.clientId,
+    authority: `https://login.microsoftonline.com/${environment.msalConfig.tenantId}`,
+    redirectUri: environment.msalConfig.redirectUri,
   },
   cache: {
-    cacheLocation: 'localStorage', // Can be 'sessionStorage' based on security needs
-    storeAuthStateInCookie: false, // Recommended for browser scenarios
+    cacheLocation: 'localStorage',
+    storeAuthStateInCookie: false,
   },
   system: {
     loggerOptions: {
@@ -19,6 +20,20 @@ export const MSALConfig = {
       piiLoggingEnabled: false,
     },
   },
-};
+}
 
-export const MSALInstanceFactory = () => new PublicClientApplication(MSALConfig);
+export const MSALInstanceFactory = async () => {
+  // Only create and initialize MSAL if enabled
+  if (environment.msalEnabled) {
+    const msalInstance = new PublicClientApplication(MSALConfig);
+    await msalInstance.initialize();
+    return msalInstance;
+  }
+  
+  // Return a mock MSAL instance when disabled
+  return {
+    initialize: async () => {},
+    getActiveAccount: () => ({ username: 'dev@example.com' }),
+    // Add more mock methods as needed
+  }
+}

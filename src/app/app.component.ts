@@ -14,25 +14,33 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.scss'],
   imports: [RouterOutlet, HeaderComponent, ChatbotContainerComponent, LeftPanelComponent, RightPanelComponent, FooterComponent]
 })
-// export class AppComponent { 
-//   selectedAgent: string = '';
-
-//   selectAgent(agent: string) {
-//     this.selectedAgent = agent;
-//   }
-// }
-
 export class AppComponent implements OnInit {
   selectedAgent: string = '';
 
   selectAgent(agent: string) {
     this.selectedAgent = agent;
   }
+  
   constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-    if (!this.authService.isAuthenticated()) {
-      this.authService.login(); // Redirects to login if not authenticated
+  async ngOnInit() {
+    try {
+      // Ensure MSAL is initialized before checking authentication
+      await this.authService.initialize();
+      
+      // Now it's safe to check authentication status
+      const isAuthenticated = await this.authService.isAuthenticated();
+      
+      if (!isAuthenticated) {
+        // Use await to ensure this completes properly
+        await this.authService.login();
+      }
+      
+      console.log('✅ Authentication setup complete');
+    } catch (error) {
+      console.error('❌ Authentication initialization failed:', error);
+      // You might want to show a user-friendly error message here
+      // or retry the initialization after a delay
     }
   }
 }

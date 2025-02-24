@@ -1,7 +1,26 @@
-<section class="content-feed">
+<!-- <section class="content-feed">
     <h2>Welcome to Your Work Feed</h2>
-    <div class="news-card">🚀 Company announces new AI initiatives.</div>
-    <div class="news-card">📅 Your next meeting is in 30 minutes.</div>
-    <div class="news-card">💡 Tips: How to use Copilot efficiently.</div>
+    <li *ngFor="let item of workFeed">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <span class="timestamp">{{ item.timestamp }}</span>
+    </li>
   </section>
+   -->
+
+   <div class="content-feed">
+    <h2>📢 Work Feed</h2>
+  
+    <!-- Show a message if there are no work feed items -->
+    <p *ngIf="workFeed.length === 0">No updates available</p>
+  
+    <!-- Render the work feed list -->
+    <ul class="work-feed">
+      <li *ngFor="let item of workFeed">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <span class="timestamp">{{ item.timestamp }}</span>
+      </li>
+    </ul>
+  </div>
   
