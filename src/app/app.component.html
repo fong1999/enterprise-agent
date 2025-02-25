@@ -1,13 +1,20 @@
-<app-header></app-header>
-<main class="dashboard-container">
-  <div class="dashboard">
-    <app-left-panel></app-left-panel>
-    <section class="main-content">
-      <app-chatbot-container [selectedAgent]="selectedAgent"></app-chatbot-container>
-      <!-- <app-content-feed></app-content-feed> -->
-      <router-outlet></router-outlet>
-    </section>
-    <app-right-panel (agentSelected)="selectAgent($event)"></app-right-panel>
+<!-- src/app/app.component.html -->
+<div class="app-container">
+  <app-header></app-header>
+  
+  <div class="content-container">
+    <div class="sidebar left-sidebar">
+      <app-left-panel></app-left-panel>
+    </div>
+    
+    <div class="main-content">
+      <app-chatbot-container></app-chatbot-container>
+    </div>
+    
+    <div class="sidebar right-sidebar">
+      <app-right-panel></app-right-panel>
+    </div>
   </div>
-</main>
-<app-footer></app-footer> 
+  
+  <app-footer></app-footer>
+</div>

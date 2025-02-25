@@ -6,6 +6,7 @@ import { MSAL_INSTANCE, MsalService, MsalGuard, MsalBroadcastService } from '@az
 import { MSALInstanceFactory } from './app/auth/msal.config';
 import { environment } from './environments/environment';
 import { ApplicationConfig } from '@angular/core';
+import { ChatbotService } from './app/services/chatbot.service';
 
 // Define a function to get the application config based on MSAL being enabled or not
 async function getAppConfig(): Promise<ApplicationConfig> {
@@ -29,8 +30,9 @@ async function getAppConfig(): Promise<ApplicationConfig> {
     return {
       providers: [
         provideHttpClient(),
-        provideRouter([], withComponentInputBinding())
+        provideRouter([], withComponentInputBinding()),
         // No MSAL providers
+        ChatbotService
       ]
     };
   }
