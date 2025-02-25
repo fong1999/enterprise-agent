@@ -1,10 +1,15 @@
 /* src/app/app.component.scss */
 
+// Colors
+$background-color: #f9f9f9;
+$border-color: #e0e0e0;
+
 .app-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .content-container {
@@ -16,32 +21,57 @@
 .sidebar {
   width: 320px;
   overflow-y: auto;
-  background-color: #f9f9f9;
-  border-right: 1px solid #e0e0e0;
+  background-color: $background-color;
+  border-right: 1px solid $border-color;
 }
 
 .right-sidebar {
   border-right: none;
-  border-left: 1px solid #e0e0e0;
+  border-left: 1px solid $border-color;
 }
 
 .main-content {
   flex: 1;
-  overflow: hidden;
+  overflow-y: auto;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  padding: 20px;
+  flex-direction: column;
   background-color: #ffffff;
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 4px;
+  }
+}
+
+/* Chatbot section */
+.chatbot-section {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Center the chatbot */
 app-chatbot-container {
   width: 100%;
-  max-width: 800px; /* Limit maximum width */
-  height: 90%; /* Take most of the vertical space */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  border-radius: 12px; /* Rounded corners */
+  max-width: 800px;
+  height: 450px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Content feed section */
+.content-feed-section {
+  padding: 0 20px 20px;
+  background-color: $background-color;
+  border-top: 1px solid $border-color;
 }
 
 // Responsive design
@@ -52,6 +82,7 @@ app-chatbot-container {
   
   app-chatbot-container {
     max-width: 700px;
+    height: 400px;
   }
 }
 
@@ -71,11 +102,15 @@ app-chatbot-container {
   }
   
   .main-content {
+    padding: 0;
+  }
+  
+  .chatbot-section, .content-feed-section {
     padding: 12px;
   }
   
   app-chatbot-container {
-    height: 100%;
+    height: 350px;
     max-width: 100%;
   }
 }

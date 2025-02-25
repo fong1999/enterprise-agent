@@ -1,26 +1,47 @@
-<!-- <section class="content-feed">
-    <h2>Welcome to Your Work Feed</h2>
-    <li *ngFor="let item of workFeed">
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
-      <span class="timestamp">{{ item.timestamp }}</span>
-    </li>
-  </section>
-   -->
-
-   <div class="content-feed">
-    <h2>📢 Work Feed</h2>
-  
-    <!-- Show a message if there are no work feed items -->
-    <p *ngIf="workFeed.length === 0">No updates available</p>
-  
-    <!-- Render the work feed list -->
-    <ul class="work-feed">
-      <li *ngFor="let item of workFeed">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <span class="timestamp">{{ item.timestamp }}</span>
-      </li>
-    </ul>
+<h2 class="section-title">Your Content Feed</h2>
+<div class="content-cards">
+  <!-- Content cards -->
+  <div class="content-card">
+    <div class="card-header">
+      <img src="assets/icons/document-icon.svg" alt="Document" class="card-icon">
+      <div class="card-title">Recent Document</div>
+    </div>
+    <div class="card-body">
+      <h3>Q4 Sales Report</h3>
+      <p>Updated 2 days ago</p>
+    </div>
   </div>
   
+  <div class="content-card">
+    <div class="card-header">
+      <img src="assets/icons/email-icon.svg" alt="Email" class="card-icon">
+      <div class="card-title">Important Email</div>
+    </div>
+    <div class="card-body">
+      <h3>Team Meeting Notes</h3>
+      <p>From: managercompany.com</p>
+    </div>
+  </div>
+  
+  <div class="content-card">
+    <div class="card-header">
+      <img src="assets/icons/task-icon.svg" alt="Task" class="card-icon">
+      <div class="card-title">Upcoming Task</div>
+    </div>
+    <div class="card-body">
+      <h3>Client Presentation</h3>
+      <p>Due tomorrow at 2:00 PM</p>
+    </div>
+  </div>
+  
+  <div class="content-card">
+    <div class="card-header">
+      <img src="assets/icons/news-icon.svg" alt="News" class="card-icon">
+      <div class="card-title">Industry News</div>
+    </div>
+    <div class="card-body">
+      <h3>Market Trends for 2025</h3>
+      <p>Published by Industry Today</p>
+    </div>
+  </div>
+</div>

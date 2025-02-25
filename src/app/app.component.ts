@@ -6,13 +6,14 @@ import { RightPanelComponent } from './components/right-panel/right-panel.compon
 import { ChatbotContainerComponent } from './components/chatbot-container/chatbot-container.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from './auth/auth.service';
+import { ContentFeedComponent } from './components/content-feed/content-feed.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [RouterOutlet, HeaderComponent, ChatbotContainerComponent, LeftPanelComponent, RightPanelComponent, FooterComponent]
+  imports: [RouterOutlet, HeaderComponent, ChatbotContainerComponent, LeftPanelComponent, RightPanelComponent, FooterComponent, ContentFeedComponent]
 })
 export class AppComponent implements OnInit {
   selectedAgent: string = '';

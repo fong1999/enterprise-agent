@@ -1,13 +1,86 @@
-.content-feed {
-    flex: 1;
-    padding: 20px;
+/* src/app/components/content-feed/content-feed.component.scss */
+
+// Colors - defined at component level
+$primary-color: #0078d4;
+$secondary-color: #505050;
+$background-color: #f9f9f9;
+$border-color: #e0e0e0;
+$text-color: #333;
+$text-light: #767676;
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: $text-color;
+}
+
+.content-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.content-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: $card-shadow;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
   
-    .news-card {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid $border-color;
+    
+    .card-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+    
+    .card-title {
+      font-size: 14px;
+      color: $text-light;
+      font-weight: 500;
     }
   }
   
+  .card-body {
+    padding: 16px;
+    
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: $primary-color;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: $text-light;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .content-cards {
+    grid-template-columns: 1fr;
+  }
+}
